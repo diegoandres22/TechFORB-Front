@@ -6,8 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SpaComponent } from './Components/spa/spa.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
-import { Navbar2Component } from './components/navbar2/navbar2.component';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
+import { Navbar2Component } from './Components/navbar2/navbar2.component';
+import { CardsComponent } from './Components/cards/cards.component';
+import { CreditsComponent } from './Components/credits/credits.component';
+import { OperationsComponent } from './Components/operations/operations.component';
+import { OffersComponent } from './Components/offers/offers.component';
+import { InsuranceComponent } from './Components/insurance/insurance.component';
+import { PointsComponent } from './Components/points/points.component';
+import { ToHelpComponent } from './Components/to-help/to-help.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +23,14 @@ import { InicioComponent } from './components/inicio/inicio.component';
     SpaComponent,
     NavbarComponent,
     Navbar2Component,
-    InicioComponent
+    InicioComponent,
+    CardsComponent,
+    CreditsComponent,
+    OperationsComponent,
+    OffersComponent,
+    InsuranceComponent,
+    PointsComponent,
+    ToHelpComponent
   ],
   imports: [
     BrowserModule,

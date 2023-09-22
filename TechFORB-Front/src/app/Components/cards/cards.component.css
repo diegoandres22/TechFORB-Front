@@ -1,0 +1,8 @@
+.CardContent{
+    background-color: yellow;
+    position: relative;
+    height: 90vh;
+    width: 80vw;
+    left: 20%;
+    top: 50px;
+}

@@ -21,9 +21,14 @@ export class NavbarComponent {
   logo: string = "LOGO";
 
 
-  inicio(event: Event) {
+  inicio(event: Event, site: String) {
     event.preventDefault();
-    this.router.navigate(['home/inicio']);
+    if (site !== 'nothing') {
+      this.router.navigate(['home/', site]);
+    } else {
+      this.router.navigate(['home/']);
+    }
+
   }
 
 
@@ -35,7 +40,7 @@ export class NavbarComponent {
       elementoDOM.style.transform = 'translate(0)';
       this.mostrado = true;
       console.log(this.mostrado);
-    }else{
+    } else {
       const elementoDOM = this.navbarRef.nativeElement;
       elementoDOM.style.transform = 'translate(-100%)';
       this.mostrado = false;
