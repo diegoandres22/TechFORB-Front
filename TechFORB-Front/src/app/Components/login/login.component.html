@@ -1,0 +1,36 @@
+<div class="bg">
+</div>
+  <div class="all-login">
+    <form action="sudmit" *ngIf="mostrarElemento" id="login">
+        <h2>Bienvenidos a <span>Unicomer</span></h2>
+      <label for="Dni-input">DNI/Mail</label>
+      <input type="text" id="Dni-input" name="DNI" />
+      <label for="contraseña">Contraseña</label>
+      <input type="text" id="contraseña" name="contraseña" />
+
+      <button (click)="home($event)">Ingresar</button>
+
+      <h4>Aun no tienes una cuenta?<button id="buttonR" (click)="registrar($event)">Registrate</button> </h4>
+    </form>
+
+    <form action="sudmit2" *ngIf="!mostrarElemento" id="login">
+        <h2>Bienvenidos a <span>Unicomer</span></h2>
+      <label for="Dni-input">DNI</label>
+      <input type="text" id="Dni-input" name="DNI" />
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" />
+
+      <label for="mail">Email</label>
+      <input type="text" id="mail" name="DNI" />
+
+      <label for="contraseña">Contraseña</label>
+      <input type="text" id="contraseña" name="contraseña" />
+
+      <button>Registrar</button>
+
+      <h4>Ya tienes una cuenta?<button id="buttonR" (click)="registrar($event)">Ingresa</button> </h4>
+    </form>
+
+
+</div>
