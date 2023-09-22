@@ -2,7 +2,7 @@
     <div class="logo">
         <h2>{{logo}}</h2>
     </div>
-    <div class="burger" >
+    <div class="burger" (click)="salir()">
         <i class='bx bx-menu'></i>
     </div>
     <div class="roter">
@@ -18,23 +18,23 @@
         <i class='bx bx-home'></i>
         <h5>Prestamos</h5>
     </div>
-    <div class="option" >
+    <div class="option" (click)="inicio($event,'operations')">
         <i class='bx bxs-chevron-right' style='color:#ffffff' ></i>
         <h5>Operaciones</h5>
     </div>
-    <div class="option" >
+    <div class="option" (click)="inicio($event,'offers')">
         <i class='bx bxs-label'></i>
         <h5>Te ofrecemos</h5>
     </div>
-    <div class="option" >
+    <div class="option" (click)="inicio($event,'insuranse')">
         <i class='bx bx-shield-alt-2'></i>
         <h5>Seguros</h5>
     </div>
-    <div class="option" >
+    <div class="option" (click)="inicio($event,'points')">
         <i class='bx bx-gift'></i>
         <h5>Puntos</h5>
     </div>
-    <div class="option" >
+    <div class="option" (click)="inicio($event,'tohelp')">
         <i class='bx bx-question-mark'></i>
         <h5>Ayuda</h5>
     </div>

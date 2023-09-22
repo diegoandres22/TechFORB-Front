@@ -1,0 +1,8 @@
+.ToHelpContent{
+    background-color: rgb(255, 0, 0);
+    position: relative;
+    height: 90vh;
+    width: 80vw;
+    left: 20%;
+    top: 50px;
+}
