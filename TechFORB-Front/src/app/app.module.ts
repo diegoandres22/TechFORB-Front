@@ -16,6 +16,8 @@ import { InsuranceComponent } from './Components/insurance/insurance.component';
 import { PointsComponent } from './Components/points/points.component';
 import { ToHelpComponent } from './Components/to-help/to-help.component';
 import { DataAPIService} from './services/DataAPIService'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +37,12 @@ import { DataAPIService} from './services/DataAPIService'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DataAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
