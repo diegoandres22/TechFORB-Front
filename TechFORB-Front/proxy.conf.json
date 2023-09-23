@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://banco-399816.rj.r.appspot.com",
+      "secure": false
+    }
+  }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -15,7 +15,7 @@ import { OffersComponent } from './Components/offers/offers.component';
 import { InsuranceComponent } from './Components/insurance/insurance.component';
 import { PointsComponent } from './Components/points/points.component';
 import { ToHelpComponent } from './Components/to-help/to-help.component';
-
+import { DataAPIService} from './services/DataAPIService'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +34,10 @@ import { ToHelpComponent } from './Components/to-help/to-help.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
