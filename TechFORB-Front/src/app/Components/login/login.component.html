@@ -2,32 +2,35 @@
 </div>
 <div class="all-login">
 
- <form (ngSubmit)="submitForm($event)" *ngIf="mostrarElemento"  #login="ngForm" >  <!-- [formGroup]="formLogin" -->
-
+  <form (submit)="submitForm($event)" *ngIf="mostrarElemento" [formGroup]="formLogin">
 
     <h2>Bienvenidos a <span>Unicomer</span></h2>
 
     <label for="Dni-input">DNI/Mail</label>
-    <input type="text" id="Dni-input" name="email" [(ngModel)]="email" />
+    <input type="text" id="Dni-input" formControlName="email" />
 
-    <!-- <div *ngIf="formLogin.get('Email')?.invalid && (formLogin.get('Email')?.dirty || formLogin.get('Email')?.touched)"
+    <div *ngIf="formLogin.get('email')?.invalid && (formLogin.get('email')?.dirty || formLogin.get('email')?.touched)"
       class="error-message">
-      <div *ngIf="formLogin.get('Email')?.hasError('required')">El campo es requerido.</div>
-      <div *ngIf="formLogin.get('Email')?.hasError('minlength')">El campo debe tener al menos 2 caracteres.</div>
-      <div *ngIf="formLogin.get('Email')?.hasError('maxlength')">El campo no debe tener más de 100 caracteres.</div>
-    </div> -->
+      <div *ngIf="formLogin.get('email')?.hasError('required')" class="red">El campo es requerido.</div>
+      <div *ngIf="formLogin.get('email')?.hasError('minlength')" class="red">El campo debe tener al menos 2 caracteres.
+      </div>
+      <div *ngIf="formLogin.get('email')?.hasError('maxlength')" class="red">El campo no debe tener más de 100
+        caracteres.</div>
+    </div>
 
     <label for="password">Contraseña</label>
 
-    <input type="text" id="password" name="code" [(ngModel)]="Code" />
+    <input type="text" id="password" name="code" formControlName="code" />
 
 
-    <!-- <div *ngIf="formLogin.get('Code')?.invalid && (formLogin.get('Code')?.dirty || formLogin.get('Code')?.touched)"
+    <div *ngIf="formLogin.get('code')?.invalid && (formLogin.get('code')?.dirty || formLogin.get('code')?.touched)"
       class="error-message">
-      <div *ngIf="formLogin.get('Code')?.hasError('required')">El campo es requerido.</div>
-      <div *ngIf="formLogin.get('Code')?.hasError('minlength')">El campo debe tener al menos 3 caracteres.</div>
-      <div *ngIf="formLogin.get('Code')?.hasError('maxlength')">El campo no debe tener más de 50 caracteres.</div>
-    </div> -->
+      <div *ngIf="formLogin.get('code')?.hasError('required')" class="red">El campo es requerido.</div>
+      <div *ngIf="formLogin.get('code')?.hasError('minlength')" class="red">El campo debe tener al menos 3 caracteres.
+      </div>
+      <div *ngIf="formLogin.get('code')?.hasError('maxlength')" class="red">El campo no debe tener más de 50 caracteres.
+      </div>
+    </div>
 
     <button type="submit">Ingresar</button>
 
@@ -38,21 +41,81 @@
 
 
   <!-- ------------------------------------------------------------------- -->
-  <form action="sudmit2" *ngIf="!mostrarElemento" id="register">
+
+
+  <form class="registercont" *ngIf="!mostrarElemento" (submit)="registerForm($event)" [formGroup]="formRegister">
+
     <h2>Bienvenidos a <span>Unicomer</span></h2>
-    <label for="Dni-input">DNI</label>
-    <input type="text" id="Dni-input" name="DNI" />
 
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" />
 
-    <label for="mail">Email</label>
-    <input type="text" id="mail" name="DNI" />
+    <label for="document">DNI</label>
+    <input type="text" id="document" name="document" (change)="updateUser($event, 'document')"
+      formControlName="document" />
 
-    <label for="contraseña">Contraseña</label>
-    <input type="text" id="contraseña" name="contraseña" />
+    <div
+      *ngIf="formRegister.get('document')?.invalid && (formRegister.get('document')?.dirty || formRegister.get('document')?.touched)"
+      class="error-message">
+      <div *ngIf="formRegister.get('document')?.hasError('required')" class="red2">El campo es requerido.</div>
+      <div *ngIf="formRegister.get('document')?.hasError('minlength')" class="red2">El campo debe tener al menos 3
+        caracteres.</div>
+      <div *ngIf="formRegister.get('document')?.hasError('maxlength')" class="red2">El campo no debe tener más de 50
+        caracteres.</div>
+      <div *ngIf="formRegister.get('document')?.hasError('pattern')" class="red2">El campo debe tener solo caracteres
+        numericos.</div>
+    </div>
 
-    <button>Registrar</button>
+
+
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" (change)="updateUser($event, 'name')" formControlName="name" />
+
+    <div
+      *ngIf="formRegister.get('name')?.invalid && (formRegister.get('name')?.dirty || formRegister.get('name')?.touched)"
+      class="error-message">
+      <div *ngIf="formRegister.get('name')?.hasError('required')" class="red2">El campo es requerido.</div>
+      <div *ngIf="formRegister.get('name')?.hasError('minlength')" class="red2">El campo debe tener al menos 3
+        caracteres.
+      </div>
+      <div *ngIf="formRegister.get('name')?.hasError('maxlength')" class="red2">El campo no debe tener más de 50
+        caracteres.</div>
+    </div>
+
+
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="correo" (change)="updateUser($event, 'correo')" formControlName="correo" />
+
+    <div
+      *ngIf="formRegister.get('correo')?.invalid && (formRegister.get('correo')?.dirty || formRegister.get('correo')?.touched)"
+      class="error-message">
+      <div *ngIf="formRegister.get('correo')?.hasError('required')" class="red2">El campo es requerido.</div>
+      <div *ngIf="formRegister.get('correo')?.hasError('minlength')" class="red2">El campo debe tener al menos 3
+        caracteres.
+      </div>
+      <div *ngIf="formRegister.get('correo')?.hasError('maxlength')" class="red2">El campo no debe tener más de 50
+        caracteres.</div>
+    </div>
+
+
+
+
+    <label for="password">Contraseña</label>
+    <input type="text" id="password" name="password" (change)="updateUser($event, 'password')"
+      formControlName="password" />
+
+    <div
+      *ngIf="formRegister.get('password')?.invalid && (formRegister.get('password')?.dirty || formRegister.get('password')?.touched)"
+      class="error-message">
+      <div *ngIf="formRegister.get('password')?.hasError('required')" class="red2">El campo es requerido.</div>
+      <div *ngIf="formRegister.get('password')?.hasError('minlength')" class="red2">El campo debe tener al menos 3
+        caracteres.</div>
+      <div *ngIf="formRegister.get('password')?.hasError('maxlength')" class="red2">El campo no debe tener más de 50
+        caracteres.</div>
+    </div>
+
+
+
+    <button (click)="registerForm($event)">Registrar</button>
 
     <h4>Ya tienes una cuenta?<button id="buttonR" (click)="registrar($event)">Ingresa</button> </h4>
   </form>

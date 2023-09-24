@@ -60,6 +60,18 @@ font-weight: 300;
     font-size: 1em;
     color: #fff;
 }
+.all-login form input:focus {
+    
+    background: transparent;
+
+}
+.registercont input:focus{
+    background-color: transparent;
+}
+.registercont{
+    padding-top: 10%;
+    gap: 1em !important;
+}
 
 .all-login form button{
     color: #fff;
@@ -74,7 +86,7 @@ font-weight: 300;
 
 form h4{
     font-weight: 300;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 form a{
@@ -87,7 +99,17 @@ form a{
     color: #9500ff;
     cursor: pointer;
 }
-
+.red{
+    color: red;
+    font-weight: 900;
+    user-select: none;
+}
+.red2{
+    color: red;
+    font-weight: 900;
+    user-select: none;
+  
+}
 @media screen and (min-width: 1000px) {
 
     .all-login{

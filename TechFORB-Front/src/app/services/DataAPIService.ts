@@ -15,4 +15,9 @@ export class DataAPIService {
     return this._http.get<any>(this.urlApi + "/user/getall");
 
   }
+  public postUser(user: object): Observable<object> {
+
+    return this._http.post<object>(this.urlApi + "/user/post", user);
+
+  }
 }
