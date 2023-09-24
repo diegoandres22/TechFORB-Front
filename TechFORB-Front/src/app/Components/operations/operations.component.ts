@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class OperationsComponent {
 
+  vewOperations: boolean = true;
+
+  fVewOperations(event: Event, state: boolean) {
+
+    event.preventDefault();
+    if (state == false) {
+
+      this.vewOperations = false;
+    }
+    if (state == true) {
+
+      this.vewOperations = true;
+    }
+  }
+
 }

@@ -1,8 +1,23 @@
 .OperationsContent{
-    background-color: rgb(38, 0, 255);
     position: relative;
     height: 90vh;
     width: 80vw;
     left: 20%;
     top: 50px;
+}
+.butonsCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.butonOperations{
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    height: 80px;
+}
+.listCont{
+    background-color: rgba(34, 122, 236, 0.267);
+    width: 100%;
+    height: 80vh;
 }

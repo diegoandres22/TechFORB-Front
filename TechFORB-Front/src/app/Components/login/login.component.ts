@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EmailValidator, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataAPIService } from 'src/app/services/DataAPIService';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'login',
@@ -41,12 +42,23 @@ export class LoginComponent {
           this.router.navigate(['/home']);
           return;
         } else {
-          alert("clave invalida");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Clave invalida'
+          })
+
           return;
         }
       }
     }
-    alert("email o documento invalido");
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Email o documento invalido'
+    })
+
   }
 
   registerForm(event: Event) {
@@ -64,12 +76,22 @@ export class LoginComponent {
 
       if (this.data[i].email == this.newUser.correo) {
 
-        alert("Este correo ya fué registrado")
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Este correo ya fué registrado'
+        })
         return;
       }
-      if (this.data[i].document == this.newUser.document) {
+      if (this.data[i].document === this.newUser.document) {
 
-        alert("Este documento ya pertenece a una cuenta")
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Este documento ya pertenece a una cuenta'
+        })
         return;
       }
 
@@ -78,8 +100,12 @@ export class LoginComponent {
     this.ApiService.postUser(user).subscribe(user => {
 
     })
-    
-    alert("Usuario registrado con éxito")
+
+    Swal.fire(
+      'Buen trabajo',
+      'Cuenta creada con exito!!',
+      'success'
+    )
     this.formRegister.reset();
   }
 
@@ -91,6 +117,7 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
+
 
     this.ApiService.getUsers().subscribe(data => {
       this.data = data;

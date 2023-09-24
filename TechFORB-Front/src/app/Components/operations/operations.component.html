@@ -3,6 +3,24 @@
 
 <div class="OperationsContent">
 
-    <h1>OPERATIONS</h1>
+    <div class="butonsCont">
+        <button class="butonOperations" (click)="fVewOperations($event, true)">
+            <p>Movimientos</p>
+        </button>
+        <button class="butonOperations" (click)="fVewOperations($event, false)">
+            <p>Transferir</p>
+        </button>
+    </div>
 
+
+    <div class="listCont" *ngIf="vewOperations" >
+
+
+        <H1>SE VE</H1>
+    </div>
+    <div class="listCont" *ngIf="!vewOperations" >
+
+        <H1>NO SE VE</H1>
+
+    </div>
 </div>
