@@ -1,8 +1,98 @@
 .CardContent{
-    background-color: yellow;
     position: relative;
-    height: 90vh;
-    width: 80vw;
-    left: 20%;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+}
+
+.title{
+    position: relative;
     top: 50px;
+    padding: 20px;
+    background: transparent;
+}
+
+.title h1{
+    font-weight: 400;
+
+    animation-name: llegar;
+    animation-duration: .5s;
+
+    user-select: none;
+    color: #fff;
+}
+
+@keyframes llegar{
+
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+
+    }
+}
+
+
+.prox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 52vh;
+    background: transparent;
+    position: relative;
+    top: 50px;
+}
+
+.prox h2{
+    
+    animation-name: aparecer;
+    animation-duration: 5s;
+
+    user-select: none;
+}
+
+@keyframes aparecer{
+
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+
+    }
+}
+
+.all{
+    background: transparent ;
+}
+
+
+@media screen and (min-width: 1000px) {
+
+
+    .CardContent{
+        background-color: transparent;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .title{
+        position: relative;
+        width: 80vw;
+        left: 20%;
+    }
+
+    .prox{
+        width: 80vw;
+        height: 30vh;
+        left: 20%;
+    }
+
+    .all{
+        background: transparent ;
+    }
+
 }

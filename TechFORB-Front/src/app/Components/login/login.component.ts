@@ -16,6 +16,7 @@ export class LoginComponent {
 
   data: any[] = [];
   newUser: any = {
+    id: 1,
     name: '',
     email: '',
     password: '',
@@ -34,11 +35,13 @@ export class LoginComponent {
   submitForm(event: Event) {
     event.preventDefault();
 
+
     for (let i = 0; i < this.data.length; i++) {
       if (this.data[i].email == this.formLogin.value.email || this.data[i].document == this.formLogin.value.email) {
         let pruebaPass: String = this.data[i].password;
         if (pruebaPass === this.formLogin.value.code) {
           event.preventDefault();
+          window.localStorage.setItem("User", JSON.stringify(this.data[i]))
           this.router.navigate(['/home']);
           return;
         } else {
@@ -113,7 +116,14 @@ export class LoginComponent {
   registrar(event: Event) {
 
     event.preventDefault();
-    this.mostrarElemento = !this.mostrarElemento;
+
+
+    if (this.mostrarElemento) {
+      this.mostrarElemento = false;
+    } else {
+      this.mostrarElemento = true;
+      location.reload();
+    }
   }
 
   ngOnInit(): void {

@@ -1,0 +1,44 @@
+.comingSoon{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+
+
+}
+
+.comingSoon h1{
+    animation: Slow .5s;
+    animation: infinite flotar 3s linear;
+}
+
+@keyframes Slow{
+    0%{
+        transform: translate(-10000px);
+    }
+}
+
+@keyframes flotar{
+    0%{
+        
+    }
+    25%{
+        transform: translate(0, -5px);
+    }
+    50%{
+        transform: translate(0, 5px);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    
+
+    .comingSoon{
+        left: 20%;
+        width: 80vw;
+    }
+}

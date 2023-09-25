@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'navbar2',
@@ -17,6 +18,7 @@ export class Navbar2Component {
     if (!this.abierto) {
       const elementoDOM = this.optionsRef.nativeElement;
       elementoDOM.style.height = '200px';
+      elementoDOM.style.backgroundColor = "rgba(53, 53, 53, 0.5)";
       const optionAll = document.querySelectorAll('.option');
       optionAll.forEach((e) => {
         // e.style.backgroundColor = 'red';
@@ -29,6 +31,7 @@ export class Navbar2Component {
     } else {
       const elementoDOM = this.optionsRef.nativeElement;
       elementoDOM.style.height = '50px';
+      elementoDOM.style.backgroundColor = "transparent";
       const optionAll = document.querySelectorAll('.option');
       optionAll.forEach((e) => {
         // e.style.backgroundColor = 'red';
@@ -38,6 +41,19 @@ export class Navbar2Component {
       this.abierto = !this.abierto;
       console.log(this.abierto);
     }
+  }
+
+  inProcess(e:Event, dato:any){
+
+    let who = dato;
+    e.preventDefault();
+    Swal.fire({
+      icon: 'info',
+      title: who,
+      footer: 'Esta funcion esta en desarrollo'
+    })
+
+
   }
 }
 

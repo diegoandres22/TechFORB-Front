@@ -7,13 +7,13 @@
         <div class="option menu" (click)="abrir()">
             <i class='bx bx-menu'></i>
         </div>
-        <div class="option ajustes">
+        <div class="option ajustes" (click)="inProcess($event, 'Ajustes')">
             <i class='bx bxs-cog'></i>
         </div>
-        <div class="option notifications">
+        <div class="option notifications" (click)="inProcess($event, 'Notificaciones')">
             <i class='bx bx-bell'></i>
         </div>
-        <div class="option user">
+        <div class="option user" (click)="inProcess($event, 'Perfil')">
             <i class='bx bxs-circle'></i>
         </div>
     </div>

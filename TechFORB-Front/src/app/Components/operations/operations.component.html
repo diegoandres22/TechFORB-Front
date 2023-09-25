@@ -12,15 +12,66 @@
         </button>
     </div>
 
+    <div class="listCont" *ngIf="vewOperations">
+        <ul>
+            <li *ngFor="let transaction of transactions">
+                <ng-container *ngIf="transaction.sender == 34">
+                    <i class='bx bx-right-top-arrow-circle'></i>
+                    Fecha : {{ transaction.date }}
+                    Destinatario : {{ transaction.addressee }}
+                    Monto : {{ transaction.amount }}
+                </ng-container>
+                <ng-container *ngIf="transaction.addressee == 34">
+                    <i class='bx bx-left-down-arrow-circle'></i>
+                    Fecha : {{ transaction.date }}
+                    Recibido de : {{ transaction.sender }}
+                    Monto: {{ transaction.amount }}
+                </ng-container>
+            </li>
 
-    <div class="listCont" *ngIf="vewOperations" >
-
-
-        <H1>SE VE</H1>
+        </ul>
+        <transactions></transactions>
     </div>
-    <div class="listCont" *ngIf="!vewOperations" >
 
-        <H1>NO SE VE</H1>
+    <div class="listCont2" *ngIf="!vewOperations">
+        <div class="balance">
+            <h1>Saldo : {{balance}} $</h1>
+            <h2>CBU : {{cbu}}</h2>
+        </div>
+
+        <form type="submit" class="transferCont" [formGroup]="formTransacction">
+
+
+            <label for="amount">Monto </label>
+            <input type="number" name="amount" (change)="dataTransfer2($event, 'amount')" formControlName="amount" />
+
+            <div *ngIf="formTransacction.get('amount')?.invalid && (formTransacction.get('amount')?.dirty || formTransacction.get('amount')?.touched)"
+                class="error-message">
+
+                <div *ngIf="formTransacction.get('amount')?.hasError('required')" class="red2">El campo es requerido.
+                </div>
+                <div *ngIf="formTransacction.get('amount')?.hasError('maxlength')" class="red2">El campo no debe tener
+                    más de 8 caracteres.</div>
+
+            </div>
+
+            <label for="address">CBU / CVU</label>
+            <input type="number" name="address" (change)="dataTransfer($event, 'address')" formControlName="address" />
+
+            <div *ngIf="formTransacction.get('address')?.invalid && (formTransacction.get('address')?.dirty || formTransacction.get('address')?.touched)"
+                class="error-message">
+
+                <div *ngIf="formTransacction.get('address')?.hasError('required')" class="red2">El campo es requerido.
+                </div>
+                <div *ngIf="formTransacction.get('address')?.hasError('minlength')" class="red2">El campo debe tener al
+                    menos 3 caracteres. </div>
+
+            </div>
+
+            <button type="submit" (click)="newTransfer()">Transferir</button>
+
+        </form>
+
 
     </div>
 </div>

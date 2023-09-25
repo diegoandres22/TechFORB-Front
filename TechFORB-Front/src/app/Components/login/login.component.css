@@ -30,6 +30,7 @@
 }
 
 .all-login h2{
+    color: #fff;
 margin-bottom: 5%;
 font-weight: 300;
 
@@ -135,5 +136,12 @@ form a{
             color: #9500ff;
             font-weight: 700;
         }
+
+        .all-login h2{
+            color: #fff !important;
+            margin-bottom: 5%;
+            font-weight: 300;
+        
+        } 
     
 }

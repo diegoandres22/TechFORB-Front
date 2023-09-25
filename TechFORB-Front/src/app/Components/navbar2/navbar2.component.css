@@ -1,13 +1,18 @@
 header{
-    position: fixed;
+    position: fixed !important;
+    top: 0;
     height: 50px;
     width: 100vw;
-    background: #ddd;
+    backdrop-filter: blur(2px); /* Ajusta el valor de 'blur' según desees */
+    background-color: rgba(53, 53, 53, 0.5); /* Cambia el color de fondo y la opacidad según desees */
+    /* padding: 20px; Añade un relleno para que el desenfoque sea visible */
+
+
     display: flex;
     justify-content:center;
     align-items: center;
     gap: 2em;
-    z-index: 10;
+    z-index: 5;
 }
 
 .buscador{
@@ -47,15 +52,12 @@ header{
 .options{
     position: fixed;
     top: 0;
-    right: 0;
+    right: 2%;
     width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(2px); /* Ajusta el valor de 'blur' según desees */
-    background-color: rgba(53, 53, 53, 0.5); /* Cambia el color de fondo y la opacidad según desees */
-    padding: 20px; /* Añade un relleno para que el desenfoque sea visible */
 
     border-radius: 0 0 25px 25px;
     overflow: hidden;
@@ -87,6 +89,7 @@ header{
 
 .no-hidden{
     display:flex;
+
 }
 
 
@@ -119,12 +122,17 @@ border: #777 solid 2px;
     header{
         position: fixed;
         height: 50px;
-        width: 100vw;
-        background: #ddd;
+        width: 80vw;    
         display: flex;
         justify-content:end;
         align-items: center;
         gap: 2em;
+        left: 20%;
+        backdrop-filter: blur(2px); /* Ajusta el valor de 'blur' según desees */
+        background-color: rgba(53, 53, 53, 0.5); /* Cambia el color de fondo y la opacidad según desees */
+        /* padding: 20px; Añade un relleno para que el desenfoque sea visible */
+    
+
     }
 
     .options{

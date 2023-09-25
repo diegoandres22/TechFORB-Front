@@ -29,10 +29,6 @@ const routes: Routes = [
   ,
   { path: 'home/tohelp', component: ToHelpComponent }
 
-
-
-
-
 ];
 
 

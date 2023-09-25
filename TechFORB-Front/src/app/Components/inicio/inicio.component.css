@@ -2,13 +2,25 @@
 .container {
   position: relative;
   height: 30vh;
-  background: #EFEFEF;
+  backdrop-filter: blur(2px); /* Ajusta el valor de 'blur' según desees */
+  background-color: rgba(53, 53, 53, 0.5); /* Cambia el color de fondo y la opacidad según desees */
+  /* padding: 20px; Añade un relleno para que el desenfoque sea visible */
   display: flex;
   justify-content: start;
   align-items: center;
   top: 50px;
   overflow: scroll;
   flex-wrap: nowrap;
+
+  animation-name: suave;
+  animation-duration: .5s;
+
+}
+
+@keyframes suave{
+  0%{
+    transform: translate(-1000px);
+  }
 }
 
 .box {
@@ -26,6 +38,8 @@
   width: 80%;
   border-radius: 15px;
   margin: 0 40px;
+
+  
 }
 
 .info {
@@ -75,29 +89,14 @@
 
 .ingresos,
 .egresos {
-  background: #8E2DE2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4A00E0, #8E2DE2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #fff;  
   position: relative;
   overflow: hidden;
 }
 
-body {
-  position: relative;
-  bottom: -150px;
-}
 
-.wave {
-  max-width: 102%;
-  width: 100%;
-  height: 187px;
-  z-index: 1;
-  background: url(https://1.bp.blogspot.com/-NYl6L8pz8B4/XoIVXwfhlNI/AAAAAAAAU3k/nxJKiLT706Mb7jUFiM5vdCsOSNnFAh0yQCLcBGAsYHQ/s1600/hero-wave.png) repeat-x;
-  animation: wave 10s cubic-bezier(1, 2, 0.67, 0.37) infinite;
+.nombre h2{
+  text-transform: capitalize;
 }
 /* 
 @keyframes wave {
@@ -113,28 +112,20 @@ body {
 @media screen and (min-width: 1000px) {
   .container {
       position: relative;
-      height: 30vh;
+      height: 40vh;
       width: 80%;
       display: flex;
       justify-content: start;
       align-items: center;
       top: 50px;
-      overflow: scroll;
+      overflow: hidden;
       flex-wrap: nowrap;
       left: 20%;
   }
 
   .box {
 
-      position: relative;
-
-      background: #8E2DE2;
-      /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-      /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #4A00E0, #8E2DE2);
-      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+      position: relative;  
       height: 80%;
       width: 20%;
       border-radius: 15px;

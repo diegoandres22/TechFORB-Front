@@ -17,6 +17,8 @@ import { PointsComponent } from './Components/points/points.component';
 import { ToHelpComponent } from './Components/to-help/to-help.component';
 import { DataAPIService} from './services/DataAPIService'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InProgressComponent } from './in-progress/in-progress.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OffersComponent,
     InsuranceComponent,
     PointsComponent,
-    ToHelpComponent
+    ToHelpComponent,
+    InProgressComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

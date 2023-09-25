@@ -46,4 +46,9 @@ export class NavbarComponent {
       this.mostrado = false;
     }
   }
+
+  SalirDeLaSesion(){
+    localStorage.removeItem("User");
+    location.replace('/login')
+  }
 }

@@ -20,4 +20,21 @@ export class DataAPIService {
     return this._http.post<object>(this.urlApi + "/user/post", user);
 
   }
+  public putUser(id: number, user: object): Observable<object> {
+
+    return this._http.put<object>(this.urlApi + `/user/edit/${id}`, user);
+
+  }
+
+  public postTransfer(transfer: object): Observable<object> {
+
+    return this._http.post<object>(this.urlApi + "/transfer/post", transfer);
+
+  }
+  public getTransfer(): Observable<any> {
+
+    return this._http.get<any>(this.urlApi + "/transfer/getall");
+
+  }
+
 }
