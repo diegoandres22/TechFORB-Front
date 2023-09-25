@@ -1,134 +1,53 @@
-
-.container {
+.operatiosnFromInicio{
   position: relative;
-  height: 30vh;
-  backdrop-filter: blur(2px); /* Ajusta el valor de 'blur' según desees */
-  background-color: rgba(53, 53, 53, 0.5); /* Cambia el color de fondo y la opacidad según desees */
-  /* padding: 20px; Añade un relleno para que el desenfoque sea visible */
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  top: 50px;
+
   overflow: scroll;
-  flex-wrap: nowrap;
-
-  animation-name: suave;
-  animation-duration: .5s;
-
+  width: 100%;
+  height: 45vh;
 }
 
-@keyframes suave{
-  0%{
-    transform: translate(-1000px);
-  }
-}
-
-.box {
-
-  flex: 1 0 auto;
+.ubiOperation{
   position: relative;
-  background: #8E2DE2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4A00E0, #8E2DE2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  top:7vh;
+  width: 100%;
+  height: 50vh;
 
-  height: 80%;
-  width: 80%;
-  border-radius: 15px;
-  margin: 0 40px;
+  animation: llegarDeLaDerecha 3s;
 
   
 }
 
-.info {
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px 0 20px;
-  color: #EFEFEF;
-  gap: .5em;
+@keyframes llegarDeLaDerecha{
+  0%{
+    transform: translate(1000px);
+  }
 }
 
-.info h3,
-.cuenta h3,
-.titularVenc h3 {
-  font-size: 1em;
-  font-weight: 300;
-}
-
-.info h2,
-.titularVenc h2 {
-  font-size: 1em;
+.title h1{
   font-weight: 400;
+
+  user-select: none;
+  color: #fff;
 }
-
-.bx {
-  font-size: 3em;
-}
-
-.cuenta {
-  color: #EFEFEF;
-  height: 33%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 20px;
-
-}
-
-.titularVenc {
-  color: #EFEFEF;
-  height: 33%;
-  display: flex;
-  gap: 2em;
-  padding: 20px 0 20px 20px;
-}
-
-.ingresos,
-.egresos {
-  background: #fff;  
-  position: relative;
-  overflow: hidden;
-}
-
-
-.nombre h2{
-  text-transform: capitalize;
-}
-/* 
-@keyframes wave {
-  0% {
-      background-position: 0;
-  }
-
-  100% {
-      background-position: 1440px;
-  }
-} */
 
 @media screen and (min-width: 1000px) {
-  .container {
-      position: relative;
-      height: 40vh;
-      width: 80%;
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      top: 50px;
-      overflow: hidden;
-      flex-wrap: nowrap;
-      left: 20%;
+
+  .ubiOperation{
+    position: relative;
+    top:7vh;
+    left: 20%;
+    width: 80%;
+    height: 20vh;
+    padding: 20px;
   }
 
-  .box {
+.operatiosnFromInicio::-webkit-scrollbar{
+  background: transparent;
+  width: 0;
+}
+}
 
-      position: relative;  
-      height: 80%;
-      width: 20%;
-      border-radius: 15px;
-      margin: 0 20px;
-  }
+.inicioCont{
+  height: 100vh;
+  overflow-x:hidden ;
 }

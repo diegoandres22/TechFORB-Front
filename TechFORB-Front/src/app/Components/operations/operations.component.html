@@ -13,23 +13,7 @@
     </div>
 
     <div class="listCont" *ngIf="vewOperations">
-        <ul>
-            <li *ngFor="let transaction of transactions">
-                <ng-container *ngIf="transaction.sender == 34">
-                    <i class='bx bx-right-top-arrow-circle'></i>
-                    Fecha : {{ transaction.date }}
-                    Destinatario : {{ transaction.addressee }}
-                    Monto : {{ transaction.amount }}
-                </ng-container>
-                <ng-container *ngIf="transaction.addressee == 34">
-                    <i class='bx bx-left-down-arrow-circle'></i>
-                    Fecha : {{ transaction.date }}
-                    Recibido de : {{ transaction.sender }}
-                    Monto: {{ transaction.amount }}
-                </ng-container>
-            </li>
-
-        </ul>
+        
         <transactions></transactions>
     </div>
 

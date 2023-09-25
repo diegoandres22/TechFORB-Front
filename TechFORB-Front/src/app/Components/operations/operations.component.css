@@ -3,12 +3,16 @@
     height: calc(100vh - 50px);
     width: 100vw;
     top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 
 }
 
-
 .listCont2 {
-
+    position: relative;
     width: 100%;
     height: 80%;
 
@@ -19,6 +23,34 @@
 
     border-radius: 20px;
 
+}
+
+.listCont{
+    min-height: 50%;
+    width: 100%;
+    height: 90%;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    background: #3f3f3f80;
+    border-radius: 20px;
+
+    animation: llegarDeEspacio 2s;
+
+    overflow-y: scroll;
+}
+
+.listCont::-webkit-scrollbar{
+    background: transparent;
+    border-radius: 5px;
+    width: 5px;
+
+}
+
+
+@keyframes llegarDeEspacio{
+    0%{
+        transform: translate(-10000px);
+    }
 }
 
 .balance {
@@ -32,6 +64,7 @@
     width: 80%;
     max-width: 600px;
     user-select: none;
+
 
     animation-name: arriveFromTheLeft;
     animation-duration: .5s;
@@ -78,6 +111,8 @@
     animation-name: arriveFromTheFloor;
     animation-duration: .3s;
 }
+
+
 
 @keyframes arriveFromTheFloor {
     0% {
@@ -146,7 +181,7 @@
     background: #9500ff;
     padding: 20px;
     height: 30px;
-
+    width: 100px;
     color: #fff;
     font-size: 1em;
 
@@ -168,15 +203,7 @@
 
     }
 
-    .listCont {
-        background-color: rgba(0, 0, 0, 0.267);
-        width: 100%;
-        height: 100%;
-    }
-
     .balance {
-
-
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -194,5 +221,9 @@
 
         text-transform: uppercase;
 
+    }
+
+    .transferCont::-webkit-scrollbar, .OperationsContent::-webkit-scrollbar{
+        background: transparent;
     }
 }

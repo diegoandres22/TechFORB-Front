@@ -1,0 +1,46 @@
+.transactionsCont ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    list-style: none;
+    padding: 10px;
+}
+
+.transactionsCont ul li{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    gap: 1em;
+    border-radius: 20px;
+}   
+
+.transactionsCont ul li i{
+    font-size: 2em;
+}
+
+.rojo{
+    color: #f00;
+}
+
+.verde{
+    color: #0f0;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .transactionsCont ul li{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        gap: 1em;
+        border-radius: 20px;
+    }  
+
+}

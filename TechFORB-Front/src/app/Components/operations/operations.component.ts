@@ -3,12 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataAPIService } from 'src/app/services/DataAPIService';
 import Swal from 'sweetalert2';
 
-interface Transaction {
-  sender: number;
-  addressee: number;
-  date: string;
-  amount: number;
-}
+// interface Transaction {
+//   sender: number;
+//   addressee: number;
+//   date: string;
+//   amount: number;
+// }
 @Component({
   selector: 'app-operations',
   templateUrl: './operations.component.html',
@@ -31,7 +31,7 @@ export class OperationsComponent {
   password!: string;
   document!: string;
   currentDate!: string;
-  transactions: Transaction[] = [];
+  // transactions: Transaction[] = [];
 
   formTransacction!: FormGroup;
 
@@ -69,17 +69,18 @@ export class OperationsComponent {
       }
 
     })
-    this.ApiService.getTransfer().subscribe(data => {
-      const filteredTransactions: Transaction[] = [];
 
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].sender == this.cbu || data[i].addressee == this.cbu) {
-          filteredTransactions.push(data[i]);
-        }
-      }
-      this.transactions = filteredTransactions.reverse();
+    // this.ApiService.getTransfer().subscribe(data => {
+    //   const filteredTransactions: Transaction[] = [];
 
-    });
+    //   for (let i = 0; i < data.length; i++) {
+    //     if (data[i].sender == this.cbu || data[i].addressee == this.cbu) {
+    //       filteredTransactions.push(data[i]);
+    //     }
+    //   }
+    //   this.transactions = filteredTransactions.reverse();
+
+    // });
 
     this.formTransacction = this.formBuilder.group({
       amount: ['', [Validators.required, Validators.maxLength(8)]],

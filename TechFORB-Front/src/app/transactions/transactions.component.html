@@ -1,3 +1,19 @@
 <div class="transactionsCont">
-    <H1>SE VE TRANSACTION</H1>
+    <ul>
+        <li *ngFor="let transaction of transactions">
+            <ng-container *ngIf="transaction.sender == 34">
+                <i class='bx bx-right-top-arrow-circle rojo'></i>
+                Fecha : {{ transaction.date }}
+                Destinatario : {{ transaction.addressee }}
+                Monto : {{ transaction.amount }}
+            </ng-container>
+            <ng-container *ngIf="transaction.addressee == 34">
+                <i class='bx bx-left-down-arrow-circle verde'></i>
+                Fecha : {{ transaction.date }}
+                Recibido de : {{ transaction.sender }}
+                Monto: {{ transaction.amount }}
+            </ng-container>
+        </li>
+
+    </ul>
 </div>
